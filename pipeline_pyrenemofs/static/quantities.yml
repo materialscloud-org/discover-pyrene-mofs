@@ -1,0 +1,38 @@
+# Quantities to be parsed from AiiDA
+
+# geometric properties
+
+- key: AV_Volume_fraction
+  dict: opt_zeopp
+  label: Geometric Void Fraction
+  unit: cm^3/cm^3
+
+- key: POAV_cm^3/g
+  dict: opt_zeopp
+  label: Accessible Pore Volume
+  unit: cm^3/g
+
+- key: 'ASA_m^2/g'
+  dict: opt_zeopp
+  label: Accessible Surface Area
+  unit: m^2/g
+
+- key: Density
+  dict: opt_zeopp
+  label: Density
+  unit: kg/m^3
+
+- key: Largest_free_sphere
+  dict: opt_zeopp
+  label: Largest Free Sphere Diameter
+  unit: Angstrom
+
+- key: Largest_included_sphere
+  dict: opt_zeopp
+  label: Largest Included Sphere Diameter
+  unit: Angstrom
+
+- key: is_optimized
+  dict: Null
+  label: Is structure DFT optimized?
+  unit: Bool

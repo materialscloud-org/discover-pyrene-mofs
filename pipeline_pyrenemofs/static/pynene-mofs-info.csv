@@ -1,0 +1,60 @@
+refcode,name,DOI,source,coodinated_molecules,alternative names,charge_estimated,elements,modifications
+FIFFUX,NU-1000,10.1021/ja4050828,manual,,,0,"H,C,O,Zr",Adding H atoms Zr6 cluster Proton topology
+AJAHID,L8-2BiBr3,10.1039/b902490p,CSD,,,0,"H, C, S, Br, Bi",None
+BOLZIN,NU-1100,10.1002/chem.201402895,CSD,,,0,"H, C, O, Zr","Primitive cell, and Adding H atoms Zr6 cluster "
+CODVAU,ROD8,10.1039/C4CE00279B,CSD,,,0,"H, C, O, Cd",Half-occupation atoms and free solvent deleted
+DOGLIX,SION-19,10.1038/s41467-019-09486-2,CSD,H2O,,-8,"H, C, N, O, Zn",Half-occupation atoms deleted
+DOZKIO,JUC-119,10.1021/ic501560z,CSD,H2O,,0,"H, C, O, Eu",Adding H atoms (H2O and COOH groups)
+EDUVOO,IRMOF-14,10.1126/science.1067208,CSD,,,0,"H, C, O, Zn",Deleting free solvent atoms
+FIJFUA,MOF-80,10.1021/ja045123o,CSD,"H2O, DMA",,0,"H, C, N, O, Tb",Removing DMF free solvent molecules
+FIZPOV,JUC-118,10.1021/cg401887b,CSD,"H2O, DMSO",,0,"H, C, O, S, Zn",Adding H atoms (H2O groups)
+FIZPUB,JUC-118-1,10.1021/cg401887b,CSD,H2O,,0,"H, C, O, Zn",Adding H atoms (H2O groups)
+FIZQAI,JUC-118-Cu,10.1021/cg401887b,CSD,H2O,,0,"H, C, O, Cu",Adding H atoms (H2O groups)
+FOMJOJ,TBAPy BioMOF - 1,10.1021/acs.inorgchem.9b00873,CSD,,,-4,"H, C, N, O, Zn",None
+GEJPAP,{[Dy4(μ-pytet)(μ4-pytet)2(DMF)20(H2O)2]·4DMF·4H2O}n ,10.1039/c7nj02935g,CSD,DMA ,,0,"H, C, N, O, S, Dy",Removing half occupation atoms
+GILFIT,Cd‐TBAPy,10.1002/adma.201803401,CSD,,,0,"H, C, O, Cd",Removing solven and adding H (COOH)
+HOFWUX,JXNU-5,10.1021/acs.inorgchem.9b00169,CSD,H2O,,-3,"H, C, O, Eu",Adding H atoms (H2O groups)
+HOXSUK,NiII‐TBAPy,10.1002/zaac.201400136,CSD,H2O,,0,"H, C, O, Ni","Remove free solvent, reduced unitcell"
+HUDCEQ,NU-505-Zn,10.1021/ic501467w,CSD,,,0,"H, C, N, O, Zn",Remove half-ocupation atoms and adding H 
+JAZJOK,Ag4(L3)(Pyr)4(H2O)2 ,10.1021/ic050984z,CSD,,,0,"H, C, N, O, S, Ag",None
+JURKIS,Mn-L,10.1107/S2052252515012506,CSD,"H2O, DMF",,0,"H, C, N, O, Mn",Adding H atoms (H2O groups)
+KAMPEW,MIT-26,10.1021/jacs.6b13176,CSD,H2O,,0,"H, C, O, Mg",Deleting free solvent atoms
+KATTOR,(Me2NH2)[ZnLi(PTCA)(H2O)]}n·n{3DMF·C4H8O2·4H2O},10.1021/acs.inorgchem.6b02407,CSD,DMA+,,0,"H, Li, C, N, O, Zn",Deleting free solvent atoms
+KATTUX,(Me2NH2)[ZnLi(PTCA)]}n·n{3DMF·5H2O},10.1021/acs.inorgchem.6b02407,CSD,DMA+,,0,"H, Li, C, N, O, Zn",Deleting free solvent atoms
+KEQJEX,Zn2(TBAPy),10.1021/ja308995t,CSD,H2O,,0,"H, C, O, Zn",None
+KEZGII,(CH3)2NH2]4[(UO2)4(TBAPy)3 - 1,10.1021/acs.inorgchem.8b00099,CSD,,,-8,"H, C, O, U",reduced Primitive Unit
+KUJYUM,Co2(TBAPy),10.1016/j.jssc.2020.121252,CSD,H2O,,0,"H, C, O, Co",Deleting H atoms 
+KUJZAT,Zn2(TBAPy),10.1016/j.jssc.2020.121252,CSD,H2O,,0,"H, C, O, Zn",Deleting H atoms 
+LEVLEF,[Mg16(PTCA)8(m2-H2O)8(H2O)16(dioxane)8](H2O)13(DMF)26,10.1039/c3cc38730e,CSD,H2O,,0,"H, C, O, Mg",Deleting free solvent atoms and primitive cell
+LIKVIN,(Me2NH2)2[Cd(PTC)]·2H2O,10.1021/acs.cgd.8b01234,CSD,,,-16,"H, C, O, Cd",None
+LOSBOM,Mg4(L)(DMF)4(H2O)4(DMF)0.5,10.1039/C4RA10835C,CSD,,,0,"H, C, N, O, Mg",Adding H atoms (H2O) and remove half occupation atoms
+LURRUM,"In-TBAPy, ROD-7",10.1021/ja906041f,CSD,"H2O, DMA",,0,"H, C, O, In","Removing half occupation , primitive cell"
+MOWNOE,Zn(TBAPy)1/2(H2O)2,10.1021/acs.inorgchem.9b02203,CSD,H2O,,0,"H, C, O, Zn",None
+MUBZUG,Zr6O4(OH)4(L2),10.1002/anie.201406501,CSD,,,0,"H, C, O, Zr","Removing half occupation , add H to cluster"
+NAHDIM,Zn-PLA,10.1039/C5SC03839A,CSD,DMA+,,-4,"H, C, N, O, Zn",Adding H atoms (H2O) 
+NOCMIC,Sr(μ-DMF)(μ-NDC),10.1021/cg700731d,CSD,DEF,,0,"H, C, N, O, Sr",Deleting half occupation atoms
+NUHTIW,Cd(PDT)2,10.1039/C9CE00875F,CSD,,,0,"H, C, N, S, Cd",Deleting solvent and half occupation atoms
+NUHTOC,Cd(PDT)2,10.1039/C9CE00875F,CSD,,,0,"H, C, N, S, Cd",Deleting solvent and half occupation atoms
+OFUTUH,Ni8(PTCA)4,10.1002/cplu.201600121,CSD,H2O,,-8,"H, C, O, Ni",None
+QOTHOY,tdcppy-Co3(μ3-O)(COO)6,10.1039/C4QI00240G,CSD,H2O,,0,"H, C, N, O, Co",Deleting half occupation atoms and solvent molecules
+RUGSOE,{[Cd(TBAPy)(H2O)2]· 4(H2O)}n,10.1002/zaac.201900231,CSD,H2O,,0,"H, C, O, Cd",Adding H H2O
+SODJUT,SION-7,10.1039/C9SC01422E,CSD,H2O,,0,"H, C, O, Mg",Adding H atoms H2O and COOH
+TOZZEQ,Bi-TBAPy,10.1016/S1872-2067(19)63329-2,CSD,DMA,,0,"H, C, N, O, Bi",Adding H atoms to counterion
+UNUNEY,"NU-1300, big test ",10.1002/anie.201605547,CSD,,,-8,"H, C, O, U","Adding H atoms H2O , primitive cell "
+UZUTAL,Ag2L2(OTf)2,10.1021/ic102441b,CSD,,,0,"H, C, O, F, P, S, Ag",Removing free solvent
+VUQLEA,[{Zn2(TBAPy)(H2O)2}·3.5DEF]n,10.1039/C5CC07808C,CSD,H2O,,0,"H, C, O, Zn",Removing half-occupation atoms 
+VUWSEN,LMOF-1,10.1039/c5ta03361f,CSD,,,0,"H, C, O, Zr",Deleting half occupation atoms and H atoms Zr6 cluster
+WAWKUD,JUC-138,10.1021/acs.cgd.6b01864,CSD,,,-4,"H, C, O, In",None
+WOBQEL,ROD-6,10.1039/C3CC49684H,CSD,H2O,,0,"H, C, O, Mn",Delete free solvent
+XIXCOZ,SION-8,10.1002/chem.201805073,CSD,H2O,,0,"H, C, O, Ca","Delete free solvent , adding H atoms H2O"
+XOKQUL,UTSA-72,10.1021/cg500235j,CSD,DMF,,0,"H, C, N, O, Zn",Delete free solvent
+YEYBOV,CALF-25,10.1021/ja306812r,CSD,H2O,,0,"H, C, O, P, Ba",H atoms added to OH 
+YOKZEG,3D bioMOF,10.1002/ejic.201900551,CSD,,,-8,"H, C, N, O, Zn",None
+YOKZIK,3D bioMOF,10.1002/ejic.201900551,CSD,,,-8,"H, C, N, O, Zn",Removing half-occupation atoms 
+ZEWPID,(CH3)2NH2]4[(UO2)4(TBAPy)3 - 2,10.1021/acs.inorgchem.8b00099,CSD,,,-8,"H, C, O, U",None
+wvcvh,NU-901,acs.chemmater.0c00634,SI,,,0,"H, C, O, Zr",Adding H atoms Zr6 cluster Proton topology
+gaeog,AlPyr-MOF,10.1038/s41586-019-1798-7,SI,,,0,"H, C, O, Al",CIF from the paper
+mfgtk,Bi-TBAPy,10.1021/acs.jpcc.9b02709,SI,,,-8,"H, C, O, Bi",CIF from the paper
+pghim,Fe-TBAPy,10.1039/c9ra03287h,SI,,,0,"H, C, O, Fe",CIF from the SI
+bopfu,TDL-Mg,10.1021/acsami.0c01198,SI,H2O,,0,"H, C, O, Mg","CIF from paper, primite cell"
+ncvdl,ACM-1,10.1002/anie.202000158,built from pghim,,,0,"H, C, O, Ti",
