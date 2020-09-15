@@ -1,0 +1,10 @@
+*.swp
+*.swo
+.DS_Store
+*.pyc
+*.egg-info
+jmol.zip
+.ipynb_checkpoints/
+.vscode
+.docker/config.json
+*.prof

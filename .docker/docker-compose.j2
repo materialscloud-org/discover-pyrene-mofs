@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  discover-{{ aiida_profile }}:
+    restart: always
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    environment:
+      BOKEH_PREFIX: {{ url_prefix }}
+      EXPLORE_URL: https://{{ explore_url }}
+    volumes:
+     - '{{ repo_folder }}:/app/.aiida/repository/{{ aiida_profile }}'
+    ports:
+      - '{{ port }}:5006'

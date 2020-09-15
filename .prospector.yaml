@@ -1,0 +1,16 @@
+max-line-length: 120
+
+pylint:
+  disable:
+    - logging-format-interpolation 
+    - too-many-function-args
+    - too-many-locals
+    - bare-except
+    - line-too-long #(when yapf can not cut it)
+    - import-outside-toplevel
+
+
+pep8:
+  disable:
+    - E722 # bare-except
+    - E501 # line too long (when yapf can not cut it)
