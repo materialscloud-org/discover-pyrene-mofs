@@ -7,6 +7,7 @@ import bokeh.plotting as bpl
 from bokeh.palettes import Plasma256
 from pipeline_pyrenemofs import get_db_nodes_dict, get_figure_values
 from pipeline_pyrenemofs import quantities
+
 from aiida import load_profile
 load_profile()
 

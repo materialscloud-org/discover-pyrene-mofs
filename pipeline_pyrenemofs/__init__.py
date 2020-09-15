@@ -49,11 +49,15 @@ quantities = collections.OrderedDict([(q['label'], frozendict(q)) for q in quant
 QUANTITY_IDS = [q['id'] for k, q in quantities.items()]
 
 @lru_cache()
+def get_pyrene_mofs_df():
+    return pd.read_csv('pipeline_pyrenemofs/static/pynene-mofs-info.csv')
+
+@lru_cache()
 def get_db_nodes_dict():
     """Given return a dictionary with all the curated materials having the material label as key, and a dict of
     curated nodes as value."""
 
-    mat_df = pd.read_csv('pipeline_pyrenemofs/static/pynene-mofs-info.csv')
+    mat_df = get_pyrene_mofs_df()
     mat_list = list(mat_df['refcode'].values)
 
     qb = QueryBuilder()

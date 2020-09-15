@@ -7,9 +7,9 @@ import panel as pn
 from functools import lru_cache
 from aiida.orm.querybuilder import QueryBuilder
 from aiida.orm import Node, Group
-from pipeline_pyrenemofs import TAG_KEY, GROUP_DIR, EXPLORE_URL, get_db_nodes_dict
+from pipeline_pyrenemofs import TAG_KEY, GROUP_DIR, EXPLORE_URL, get_db_nodes_dict, get_pyrene_mofs_df
 
-from figure.config import load_profile
+from aiida import load_profile
 load_profile()
 
 try:
@@ -45,18 +45,24 @@ def get_table():
 
     pd.set_option('max_colwidth', 10)
 
-    df = pd.DataFrame(columns=[  # Set the order of the columns
+    df_info = get_pyrene_mofs_df()
+    df_tabl = pd.DataFrame(columns=[  # Set the order of the columns
         'Name', 'Article', 'Elements', 'Surface (m2/g)', 'Structure'
     ])
 
     db_nodes_dict = get_db_nodes_dict()
 
-    for mat_id, mat_dict in db_nodes_dict.items():
+    for i, df_info_row in df_info.iterrows():
+        mat_id = df_info_row['refcode']
+        mat_dict = db_nodes_dict[mat_id]
+        #mat_dict['orig_cif'].set_extra('name_conventional', df_info_row['name']) # Used to correct materials' info!
         new_row = {
+            'Order': df_info_row['idx'],
             'Name': mat_dict['orig_cif'].extras['name_conventional'],
             'Article': doi_link(mat_dict),
             'Elements': get_elements_from_cifdata(mat_dict['orig_cif']),
-            'Structure': detail_link(mat_id)
+            'Structure': detail_link(mat_id),
+            'Ligand': df_info_row['ligand']
         }
 
         if 'opt_zeopp' in mat_dict:
@@ -64,12 +70,13 @@ def get_table():
         else: 
             new_row['Surface (m2/g)'] = int(mat_dict['orig_zeopp']['ASA_m^2/g'])
 
-        df = df.append(new_row, ignore_index=True)
+        df_tabl = df_tabl.append(new_row, ignore_index=True)
 
-    df = df.sort_values(by=['Name'])
-    df = df.reset_index(drop=True)
-    df.index += 1
-    return df
+    df_tabl = df_tabl.sort_values(by=['Order'])
+    df_tabl = df_tabl.drop(columns=['Order'])
+    df_tabl = df_tabl.reset_index(drop=True)
+    df_tabl.index += 1
+    return df_tabl
 
 
 def fake_button(link, label, button_type):
