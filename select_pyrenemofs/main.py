@@ -88,7 +88,7 @@ buttons.append(
                 button_type="primary"))
 buttons.append(
     fake_button(link="figure_pyrenemofs", #make an archive
-                label="Interactive plot",
+                label="Interactive Plot",
                 button_type="primary"))
 
 pn.extension()

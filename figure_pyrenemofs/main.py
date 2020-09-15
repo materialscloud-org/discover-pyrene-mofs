@@ -70,7 +70,7 @@ def get_plot(inp_x, inp_y, inp_clr):
     p_new.title.text_font_size = '10pt'
     p_new.title.text_font_style = 'italic'
     update_legends(p_new, q_list, hover)
-    tap.callback = bmd.OpenURL(url="detail?mat_id=@mat_id")
+    tap.callback = bmd.OpenURL(url="detail_pyrenemofs?mat_id=@mat_id")
 
     cmap = bmd.LinearColorMapper(palette=Plasma256, low=min(clrs), high=max(clrs))
     fill_color = {'field': 'color', 'transform': cmap}
