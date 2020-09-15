@@ -8,7 +8,7 @@ from detail_pyrenemofs.structure import structure_jsmol
 from detail_pyrenemofs.utils import get_mat_id, get_details_title, get_geom_table, get_appl_table, get_title
 from pipeline_pyrenemofs import get_mat_nodes_dict
 
-from aiida import load_profile
+from pipeline_pyrenemofs import load_profile
 load_profile()
 
 pn.extension(css_files=['details/static/style.css'])

@@ -9,7 +9,7 @@ from aiida.orm.querybuilder import QueryBuilder
 from aiida.orm import Node, Group
 from pipeline_pyrenemofs import TAG_KEY, GROUP_DIR, EXPLORE_URL, get_db_nodes_dict, get_pyrene_mofs_df
 
-from aiida import load_profile
+from pipeline_pyrenemofs import load_profile
 load_profile()
 
 try:

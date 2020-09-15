@@ -10,7 +10,7 @@ from aiida.orm import Group, CifData
 from aiida.tools.importexport.dbexport import export  # Updated to AiiDA v1.3.0
 from pipeline_pyrenemofs import TAG_KEY, GROUP_DIR
 
-from aiida import load_profile
+from pipeline_pyrenemofs import load_profile
 load_profile()
 
 mat_df = pd.read_csv('../pipeline_pyrenemofs/static/pynene-mofs-info.csv')

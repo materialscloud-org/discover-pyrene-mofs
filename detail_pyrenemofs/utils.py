@@ -2,7 +2,7 @@ from bokeh.io import curdoc
 from pipeline_config import applications, quantities, EXPLORE_URL
 import panel as pn
 
-AIIDA_LOGO_PATH = "details/static/aiida-128.png"
+AIIDA_LOGO_PATH = "detail_pyrenemofs/static/aiida-128.png"
 
 
 def get_mat_id():

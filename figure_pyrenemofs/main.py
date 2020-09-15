@@ -8,7 +8,7 @@ from bokeh.palettes import Plasma256
 from pipeline_pyrenemofs import get_db_nodes_dict, get_figure_values
 from pipeline_pyrenemofs import quantities
 
-from aiida import load_profile
+from pipeline_pyrenemofs import load_profile
 load_profile()
 
 def update_legends(p, q_list, hover):
