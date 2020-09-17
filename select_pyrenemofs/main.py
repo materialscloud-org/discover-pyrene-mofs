@@ -98,9 +98,19 @@ buttons.append(
                 label="Interactive Plot",
                 button_type="primary"))
 
-pn.extension()
+html_table = get_table().to_html(
+    escape=False, # keep html images
+    classes='table table-striped table-hover'
+    )
 
 t = pn.Column()
 t.append(buttons)
-t.append(get_table().to_html(escape=False))
+t.append(pn.pane.HTML(html_table,
+    style={'border': '3px solid black',
+           'border-radius': '10px', 
+           'padding': '0px'
+    }
+))
+
+print(html_table)
 t.servable()

@@ -23,7 +23,7 @@ transparency:
 }
 
 div.grid-item {
-  max-height:350px;
+  /* max-height:350px; */
   overflow:scroll;
 }
 
