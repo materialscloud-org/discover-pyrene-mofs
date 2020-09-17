@@ -91,7 +91,7 @@ buttons.append(
     fake_button(link="pipeline_config/static/pyrene-mofs-info.csv", label="Info CSV", button_type="primary")) #audoderect to the GitHub file!
 buttons.append(
     fake_button(link="https://archive.materialscloud.org/file/2019.0034/v2/cifs_cellopt_Dec19.zip", #make an archive
-                label="CURATED CIFs",
+                label="Crystallographic Information Files",
                 button_type="primary"))
 buttons.append(
     fake_button(link="figure_pyrenemofs", #make an archive
