@@ -27,10 +27,12 @@ bokeh serve --show figure select_pyrenemofs
 
 ## Docker deployment
 
+ * Adapt variables in `docker-compose.yml` to fit the connection details of your AiiDA database
+ * For MacOS, use `AIIDADB_HOST: docker.host.internal` and comment out `network_mode`
+ * For Linux, use `AIIDADB_HOST: 127.0.0.1` and use `network_mode: host`
+
 ```
-pip install -e .
-./prepare.sh
 docker-compose build
 docker-compose up
-# open http://localhost:3245/cofs/select-figure
+# open http://localhost:5006/pyrene-mofs/select_pyrenemofs
 ```

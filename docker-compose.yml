@@ -8,9 +8,15 @@ services:
       dockerfile: Dockerfile
     command: ["/opt/serve-app.sh"]
     environment:
-      BOKEH_PREFIX: /curated-cofs
-      EXPLORE_URL: "https://dev-www.materialscloud.org/explore/curated-cofs" 
+      BOKEH_PREFIX: /pyrene-mofs
+      EXPLORE_URL: "https://dev-www.materialscloud.org/explore/pyrene-mofs" 
+      AIIDADB_NAME: daniele_27Jun19_daniele_3f4e0c6b005ced3dbd84687a416a55ae
+      AIIDADB_USER: aiida_qs_daniele_3f4e0c6b005ced3dbd84687a416a55ae
+      AIIDADB_PASS: ""
+      #AIIDADB_HOST: docker.host.internal
+      AIIDADB_HOST: 127.0.0.1
+    network_mode: host
     volumes:
-     - '/tmp:/app/.aiida/repository/curated-cofs'
+     - '/home/daniele/aiida1/.aiida/repository/daniele_27Jun19:/app/.aiida/repository/generic'
     ports:
       - '5006:5006'
