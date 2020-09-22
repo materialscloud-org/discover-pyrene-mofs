@@ -1,5 +1,5 @@
 from bokeh.io import curdoc
-from pipeline_config import applications, quantities, EXPLORE_URL
+from pipeline_pyrenemofs import quantities, EXPLORE_URL
 import panel as pn
 
 AIIDA_LOGO_PATH = "detail_pyrenemofs/static/aiida-128.png"
@@ -64,46 +64,6 @@ def get_geom_table(zeopp):
     return md_str
 
 
-def get_appl_table(mat_nodes_dict):
-    """Return table of application performance data
-    
-    :param dict mat_nodes_dict:  dictionary of all relevant nodes for the material
-    """
-    html_str = """ """
-    missing_values = False
-    for appl_key, appl_dict in applications.items():
-        html_str += """<h3>{}</h3>""".format(appl_key)
-        for propr in ["x", "y"]:
-            q_dict = quantities[appl_dict[propr]]['dict']
-            q_key = quantities[appl_dict[propr]]['key']
-            q_unit = quantities[appl_dict[propr]]['unit']
-
-            try:
-                q_val = mat_nodes_dict[q_dict][q_key]
-                #quick fix to show all values nicely enough
-                if abs(float(q_val)) > 0.01:
-                    q_val = round(q_val, 3)
-                elif abs(float(q_val)) > 0.001:
-                    q_val = round(q_val, 4)
-            except:  #pylint: disable=bare-except # noqa: E722
-                q_val = "***"
-                missing_values = True
-            html_str += "&nbsp;&nbsp;&nbsp; {} ({}): {}".format(appl_dict[propr], q_unit, q_val)
-
-            # If the node exists (even for nonporous mat/appl) get the aiida-link
-            try:
-                q_uuid = mat_nodes_dict[q_dict].uuid
-                html_str += get_provenance_link(q_uuid)
-            except:
-                pass
-
-            html_str += "<br>"
-    if missing_values:
-        html_str += "<br><i>*** this property was not computed yet, incurred in some problem," +\
-                    "or can not be computed for a nonpermeable system"
-    return (html_str)
-
-
 def get_provenance_url(uuid):
     """Return URL to EXPLORE section for given uuid."""
     return '{explore_url}/details/{uuid}'.format(explore_url=EXPLORE_URL, uuid=uuid)
@@ -118,7 +78,6 @@ def get_provenance_link(uuid, label=None):
     html_str = "<a href='{link}' target='_blank'><img src='{logo_url}' title='{label}' class='provenance-logo'></a>"\
          .format(link=get_provenance_url(uuid), label=label, logo_url=AIIDA_LOGO_PATH)
 
-    # return pn.pane.HTML(html_str, align='center')
     return html_str
 
 

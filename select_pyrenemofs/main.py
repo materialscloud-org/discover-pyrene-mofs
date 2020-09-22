@@ -60,7 +60,7 @@ def get_table():
             'Order': df_info_row['idx'],
             'Name': mat_dict['orig_cif'].extras['name_conventional'],
             'Article': doi_link(mat_dict),
-            'Elements': get_elements_from_cifdata(mat_dict['orig_cif']),
+            'Elements': df_info_row['elements'], #not working bad cif: get_elements_from_cifdata(mat_dict['orig_cif']),
             'Structure': detail_link(mat_id),
             'Ligand': df_info_row['ligand']
         }
@@ -112,5 +112,4 @@ t.append(pn.pane.HTML(html_table,
     }
 ))
 
-print(html_table)
 t.servable()

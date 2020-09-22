@@ -23,7 +23,7 @@ qb.append(Group, with_node='n', filters={'label': {'like': GROUP_DIR + "%"}}, ta
 
 kwargs = {
     # general
-    'entities': qb.all(flat=True)[-11:-1],
+    'entities': qb.all(flat=True),
     'filename': "export_pyrene_mofs_{}.aiida".format(datetime.date.today().strftime(r'%d%b%y')),
     'overwrite': True,
     'silent': False,

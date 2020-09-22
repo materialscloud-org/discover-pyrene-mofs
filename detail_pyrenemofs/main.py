@@ -5,7 +5,7 @@ import pandas as pd
 
 from detail_pyrenemofs.dft_info import plot_energy_steps
 from detail_pyrenemofs.structure import structure_jsmol
-from detail_pyrenemofs.utils import get_mat_id, get_details_title, get_geom_table, get_appl_table, get_title
+from detail_pyrenemofs.utils import get_mat_id, get_details_title, get_geom_table, get_title
 from pipeline_pyrenemofs import get_mat_nodes_dict
 
 from pipeline_pyrenemofs import load_profile
@@ -31,10 +31,10 @@ class DetailView():
         if 'opt_cif_ddec' in nodes:
             col.append(get_title('Cell optimized structure', uuid=nodes['opt_cif_ddec'].uuid))
             col.append(pn.pane.Bokeh(structure_jsmol(nodes['opt_cif_ddec'])))
-            col.append(get_title('Energy profile during cell optimization', uuid=nodes['dftopt'].uuid))
-            col.append(pn.pane.Bokeh(plot_energy_steps(dftopt_out=nodes['dftopt'])))
             col.append(get_title('Geometric properties', uuid=nodes["opt_zeopp"].uuid))
             col.append(pn.pane.Markdown(get_geom_table(nodes["opt_zeopp"])))
+            col.append(get_title('Energy profile during cell optimization', uuid=nodes['dftopt'].uuid))
+            col.append(pn.pane.Bokeh(plot_energy_steps(dftopt_out=nodes['dftopt'])))
         else:
             col.append(get_title('Cell structure (not DFT optimized)', uuid=nodes['orig_cif'].uuid))
             col.append(pn.pane.Bokeh(structure_jsmol(nodes['orig_cif'])))
