@@ -11,7 +11,7 @@ from pipeline_pyrenemofs import get_mat_nodes_dict
 from pipeline_pyrenemofs import load_profile
 load_profile()
 
-pn.extension(css_files=['details/static/style.css'])
+pn.extension(css_files=['detail_pyrenemofs/static/style.css'])
 
 class DetailView():
 
