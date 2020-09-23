@@ -20,11 +20,13 @@ class DetailView():
         self.mat_nodes_dict = get_mat_nodes_dict(self.mat_id)
         print(">> Display details of MAT_ID:", self.mat_id, self.mat_nodes_dict['orig_cif'])
 
+    @property
     def title_col(self):
         col = pn.Column(width=700)
         col.append(pn.pane.Markdown(get_details_title(self.mat_nodes_dict['orig_cif'])))
         return col
 
+    @property
     def structure_col(self):
         nodes = self.mat_nodes_dict
         col = pn.Column(sizing_mode='stretch_width')
@@ -48,11 +50,6 @@ class DetailView():
 
 dv = DetailView()
 
-tabs = pn.Tabs(tabs_location='left', sizing_mode='stretch_width')
-tabs.extend([
-    ("Structure", dv.structure_col()),
-])
-
-page = dv.title_col()
-page.append(tabs)
+page = dv.title_col
+page.append(dv.structure_col)
 page.servable()

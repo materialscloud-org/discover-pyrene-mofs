@@ -13,8 +13,8 @@ def structure_jsmol(cif_node):
         use="HTML5",
         #serverURL="https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
         #j2sPath="https://chemapps.stolaf.edu/jmol/jsmol/j2s",
-        serverURL="detail/static/jsmol/php/jsmol.php",
-        j2sPath="detail/static/jsmol/j2s",
+        serverURL="detail_pyrenemofs/static/jsmol/php/jsmol.php",
+        j2sPath="detail_pyrenemofs/static/jsmol/j2s",
         script="""
 set antialiasDisplay ON;
 load data "cifstring"
@@ -29,7 +29,7 @@ end "cifstring"
         height=600,
         script_source=script_source,
         info=info,
-        js_url="details/static/jsmol/JSmol.min.js",
+        js_url="detail_pyrenemofs/static/jsmol/JSmol.min.js",
     )
 
     return applet
