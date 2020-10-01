@@ -6,7 +6,7 @@ import re
 import os
 from os.path import join, dirname, realpath
 from frozendict import frozendict
-from functools import lru_cache
+from functools import lru_cache, wraps
 from aiida.orm.querybuilder import QueryBuilder
 from aiida.orm import Node, Dict, Group, WorkChainNode, CifData
 
@@ -15,11 +15,11 @@ GROUP_DIR = "curated-mof"
 CONFIG_DIR = join(dirname(realpath(__file__)), "static")
 EXPLORE_URL = os.getenv('EXPLORE_URL', "https://dev-www.materialscloud.org/explore/curated-cofs")
 
+
 def update_config():
     """Add AiiDA profile from environment variables, if specified"""
     from aiida.manage.configuration import load_config
     from aiida.manage.configuration.profile import Profile
-    import os
 
     profile_name = os.getenv("AIIDA_PROFILE")
     config = load_config(create=True)
@@ -42,11 +42,37 @@ def update_config():
 
     return config
 
+
 def load_profile():
     import aiida
 
     update_config()
     aiida.load_profile()
+
+
+def freezeargs(func):
+    """Transform mutable dictionary unto immutable.
+
+    Makes dictionary hashable, enabling use with lru_cache:
+
+    Usage:
+
+      @freezeargs
+      @lru_cache
+      def func(...):
+        pass
+
+    See https://stackoverflow.com/questions/6358481/using-functools-lru-cache-with-dictionary-arguments
+    """
+
+    @wraps(func)
+    def wrapped(*args, **kwargs):
+        args = tuple([frozendict(arg) if isinstance(arg, dict) else arg for arg in args])
+        kwargs = {k: frozendict(v) if isinstance(v, dict) else v for k, v in kwargs.items()}
+        return func(*args, **kwargs)
+
+    return wrapped
+
 
 # Get quantities
 with open(join(CONFIG_DIR, "quantities.yml"), 'r') as f:
@@ -79,9 +105,11 @@ quantities = collections.OrderedDict([(q['label'], frozendict(q)) for q in quant
 # keys of all quantities (features & targets)
 QUANTITY_IDS = [q['id'] for k, q in quantities.items()]
 
+
 @lru_cache()
 def get_pyrene_mofs_df():
     return pd.read_csv('pipeline_pyrenemofs/static/pynene-mofs-info.csv')
+
 
 @lru_cache()
 def get_db_nodes_dict():
@@ -106,6 +134,7 @@ def get_db_nodes_dict():
 
     return db_nodes_dict
 
+
 def get_figure_values(db_nodes_dict, q_list):
     """Query the AiiDA database for a list of quantities."""
 
@@ -114,36 +143,20 @@ def get_figure_values(db_nodes_dict, q_list):
         mat_values = [mat]
         dft_opt = False
         for n in nodes_dict.keys():
-            if n=='opt_cif_ddec':
+            if n == 'opt_cif_ddec':
                 dft_opt = True
                 break
         for q in q_list:
-            if q['key']=='is_optimized':
+            if q['key'] == 'is_optimized':
                 mat_values.append(dft_opt)
             else:
-                for n,v in nodes_dict.items():
-                    if n==['orig_zeopp','opt_zeopp'][dft_opt]:
+                for n, v in nodes_dict.items():
+                    if n == ['orig_zeopp', 'opt_zeopp'][dft_opt]:
                         mat_values.append(v[q['key']])
                         break
         figure_values.append(mat_values)
     return figure_values
 
-def get_data_aiida(q_list):
-    """Query the AiiDA database for a list of quantities."""
-    from aiida.orm.querybuilder import QueryBuilder
-    from aiida.orm import Dict, Group
-
-    qb = QueryBuilder()
-    qb.append(CifData, filters={'label': {'in': mat_list}}, tag='n', project=['label'])
-    qb.append(Group, with_node='n', filters={'label': {'like': GROUP_DIR + "%"}}, tag='g')
-
-    for q in q_list:
-        qb.append(Dict,
-                  project=['attributes.{}'.format(q['key'])],
-                  filters={'extras.{}'.format(TAG_KEY): q['dict']},
-                  with_group='g')
-
-    return qb.all()
 
 # Get queries
 @lru_cache(maxsize=128)

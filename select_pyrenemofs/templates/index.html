@@ -4,40 +4,16 @@
   <style>
     {% include "material.indigo-blue.min.css" %}
     {% include "style.css" %}
+    {% include "bootstrap.min.css" %}
   </style>
 {% endblock %}
 
 {% block contents %}
 <div class="content" >
 <div class="content-float" >
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-
-<!-- <div class="two-column-grid">
-  <div class="grid-item">
-    <p>
-      Click on the figure for an <b>interactive plot</b>.
-    </p>
-    <figure>
-      <div class="container">
-        <a href="figure">
-          <img class="figure-thumbnail default-figure mdl-card mdl-shadow--2dp main-card" src="select_pyrenemofs/static/images/fig_default.png">
-          <div class="hover-text">Scatter plot</div>
-        </a>
-      </div>
-      <figcaption>
-      Browse MOF's properties
-      </figcaption>
-    </figure>
-  </div> -->
-
-  <div class="grid-item">
-{{ super() }}
-  </div>
-<!-- </div> -->
-
+    <div class="grid-item">
+      {{ super() }}
+    </div>
 </div>
 </div>
 
