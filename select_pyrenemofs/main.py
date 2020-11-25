@@ -12,15 +12,19 @@ def fake_button(link, label, button_type):
 
 
 buttons = pn.Row()
-buttons.append(fake_button(link="pipeline_config/static/pyrene-mofs-info.csv", label="Info CSV",
-                           button_type="primary"))  #audoderect to the GitHub file!
-buttons.append(
-    fake_button(
-        link="https://archive.materialscloud.org/file/2019.0034/v2/cifs_cellopt_Dec19.zip",  #make an archive
-        label="Crystallographic Information Files",
-        button_type="primary"))
+
 buttons.append(fake_button(
-    link="figure_pyrenemofs",  #make an archive
+    link="https://github.com/lsmo-epfl/discover-pyrene-mofs/blob/master/pipeline_pyrenemofs/static/pynene-mofs-info.csv", 
+    label="Info CSV",
+    button_type="primary")) # Link to GitHub file
+
+buttons.append(fake_button(
+    link="https://archive.materialscloud.org/deposit/records/file?file_id=cbd0a0f3-69ed-4ba0-8536-2f10cc1562a7&filename=CIF_files.zip",  
+    label="Crystallographic Information Files",
+    button_type="primary")) # Link to zip file in the Materials Cloud Archive
+
+buttons.append(fake_button(
+    link="figure_pyrenemofs", 
     label="Interactive Plot",
     button_type="primary"))
 
