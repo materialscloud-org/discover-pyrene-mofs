@@ -26,15 +26,31 @@ def update_config():
     if profile_name and profile_name not in config.profile_names:
         profile = Profile(
             profile_name, {
-                "database_hostname": os.getenv("AIIDADB_HOST"),
-                "database_port": os.getenv("AIIDADB_PORT"),
-                "database_engine": os.getenv("AIIDADB_ENGINE"),
-                "database_name": os.getenv("AIIDADB_NAME"),
-                "database_username": os.getenv("AIIDADB_USER"),
-                "database_password": os.getenv("AIIDADB_PASS"),
-                "database_backend": os.getenv("AIIDADB_BACKEND"),
-                "default_user": os.getenv("default_user_email"),
-                "repository_uri": "file://{}/.aiida/repository/{}".format(os.getenv("AIIDA_PATH"), profile_name),
+                "default_user_email": os.getenv("default_user_email"),
+                "storage": {
+                    "backend": "psql_dos",
+                    "config": {
+                        "database_engine": os.getenv("AIIDADB_ENGINE"),
+                        "database_hostname": os.getenv("AIIDADB_HOST"),
+                        "database_port": os.getenv("AIIDADB_PORT"),
+                        "database_name": os.getenv("AIIDADB_NAME"),
+                        "database_username": os.getenv("AIIDADB_USER"),
+                        "database_password": os.getenv("AIIDADB_PASS"),
+                        "repository_uri": "file://{}/.aiida/repository/{}".format(os.getenv("AIIDA_PATH"), profile_name),
+                    }
+                },
+                "process_control": {
+                    "backend": "rabbitmq",
+                    "config": {
+                        "broker_protocol": "amqp",
+                        "broker_username": "guest",
+                        "broker_password": "guest",
+                        "broker_host": "127.0.0.1",
+                        "broker_port": 5672,
+                        "broker_virtual_host": ""
+                    }
+                },
+                "options": {}
             })
         config.add_profile(profile)
         config.set_default_profile(profile_name)

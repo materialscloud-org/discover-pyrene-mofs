@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Download jsmol
-echo "### Donwloading jsmol"
+echo "### Downloading jsmol"
 wget https://sourceforge.net/projects/jmol/files/Jmol/Version%2014.29/Jmol%2014.29.22/Jmol-14.29.22-binary.zip/download --output-document jmol.zip
 unzip jmol.zip 
 cd jmol-14.29.22

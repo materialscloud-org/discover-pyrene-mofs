@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.8
 
 # Install recent nodejs for bokeh & jsmol-bokeh-extension
 # See https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
@@ -40,7 +40,6 @@ COPY select_pyrenemofs ./select_pyrenemofs
 RUN ln -s /app/jmol-14.29.22/jsmol ./detail_pyrenemofs/static/jsmol
 COPY setup.py ./
 RUN pip install -e .
-RUN reentry scan -r aiida
 COPY serve-app.sh /opt/
 
 # start bokeh server
