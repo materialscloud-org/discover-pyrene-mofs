@@ -19,10 +19,10 @@ if __name__ == '__main__':
               "requests~=2.21.0",
               "panel~=0.8.1",
               "param~=1.9.3",
-              "graphviz~=0.13",
               "pandas~=1.1.0",
               "pyjanitor~=0.20.2",
               "jinja2~=3.0.0",
               "frozendict~=1.2",
+              "numpy~=1.23.1",
           ],
           extras_require={"pre-commit": ["pre-commit==1.17.0", "prospector==1.2.0", "pylint==2.4.0"]})

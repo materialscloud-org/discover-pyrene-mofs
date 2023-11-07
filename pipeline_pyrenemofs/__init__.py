@@ -28,7 +28,7 @@ def update_config():
             profile_name, {
                 "default_user_email": os.getenv("default_user_email"),
                 "storage": {
-                    "backend": "psql_dos",
+                    "backend": "core.psql_dos",
                     "config": {
                         "database_engine": os.getenv("AIIDADB_ENGINE"),
                         "database_hostname": os.getenv("AIIDADB_HOST"),
