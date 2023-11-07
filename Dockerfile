@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.9
 
 # Install recent nodejs for bokeh & jsmol-bokeh-extension
 # See https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
