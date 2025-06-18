@@ -6,9 +6,9 @@ Interactive resources associated with the review paper on MOFs with pyrene ligan
 
 ### Prerequisites
 
- * [git](https://git-scm.com/)
- * [python](https://www.python.org/) >= 2.7
- * [nodejs](https://nodejs.org/en/) >= 6.10
+- [git](https://git-scm.com/)
+- [python](https://www.python.org/) >= 2.7
+- [nodejs](https://nodejs.org/en/) >= 6.10
 
 ### Installation
 
@@ -27,12 +27,13 @@ bokeh serve --show figure select_pyrenemofs
 
 ## Docker deployment
 
- * Adapt variables in `docker-compose.yml` to fit the connection details of your AiiDA database
- * For MacOS, use `AIIDADB_HOST: docker.host.internal` and comment out `network_mode`
- * For Linux, use `AIIDADB_HOST: 127.0.0.1` and use `network_mode: host`
+This has been built as a docker image and is deployed on MaterialsCloud. This docker image is availible on the private MaterialsCloud harbor registry.
+If you would like to rebuild this container. You will need the [pyrene_mofs.aiida](https://archive.materialscloud.org/record/2020.156) aiida database file at the same level as the Dockerfile.
+
+Rebuilding is then simple.
 
 ```
-docker-compose build
-docker-compose up
-# open http://localhost:5006/pyrene-mofs/select_pyrenemofs
+docker compose build
+docker compose up
+# open http://localhost:5006/select_pyrenemofs
 ```
